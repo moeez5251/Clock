@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+}
+.card {
+    --background: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
+    width: 451px;
+    height: 214px;
+    padding: 5px;
+    border-radius: 1rem;
+    overflow: visible;
+    background: #f7ba2b;
+    background: var(--background);
+    position: relative;
+    z-index: 1;
+    margin: 160px auto;
+    cursor: pointer;
+}
+   
+   .card::after {
+    position: absolute;
+    content: "";
+    top: 30px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    transform: scale(0.8);
+    filter: blur(25px);
+    background: #f7ba2b;
+    background: var(--background);
+    transition: opacity .5s;
+   }
+   
+   .card-info {
+    --color: #181818;
+    background: var(--color);
+    color: var(--color);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    border-radius: .7rem;
+   }
+   
+   .card  {
+    font-weight: bold;
+    letter-spacing: .1em;
+   }
+   @keyframes animate {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+   }
+   .card:hover::after {
+    opacity: 0;
+   }
+   
+   
+   .timer{
+    color: white;
+    font-size: 78px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+   }
+   .hour{
+    color: #f7ba2b;
+   }
+   .min{
+    color: #ea5358;
+   }
+   .sec{
+    color: aqua;
+
+   }
+
+   @media screen  and (max-width:500px){
+    .card{
+        width: 351px;
+        height: 172px;
+    }
+   }
+   @media screen and (max-width:360px) {
+    .card{
+        width: 280px;
+    }
+    .timer{
+        font-size: 63px;
+    }
+   }
+   
+   @media screen and (max-width:296px) {
+    .card{
+        width: 215px;
+    }
+    .timer{
+        font-size: 47px;
+    }
+   }
